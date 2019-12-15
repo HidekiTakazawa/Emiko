@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+    <table border="1">
+        <tr>
+            <th>日付</th>
+            <th>時間</th>
+            <th>尿量</th>
+            <th>メモ</th>
+
+            
+        </tr>
+            {% for nurse in nurses %}
+            <tr>
+            <td>{{ nurse.nurse_day }}</td>
+            <td>{{ nurse.urine_time }}</td>
+            <td>{{ nurse.urine_volume }}</td>
+            <td>{{ nurse.memo }}</td>
+           
+            
+            {% if user.is_superuser %}
+                
+                <td><a href="{% url 'nurse_edit' nurse.pk %}">更新画面</a></td> 
+                <td><a href="{% url 'nurse_remove' nurse.pk %}">削除画面</a></td> 
+                    
+            {% endif %}  
+            
+            
+            </tr>
+
+            {% endfor %}
+
+
+    
+{% endblock %}

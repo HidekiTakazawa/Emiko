@@ -24,6 +24,8 @@ SECRET_KEY = 'y#5980n2byigpmic@57w8^)n8)e1sf@j#o!#qr*rnka2+jgh$('
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+LOGIN_REDIRECT_URL = '/'
+
 
 ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
@@ -38,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'emikoKanri.apps.EmikokanriConfig',
+    'accounts.apps.AccountsConfig',
+
 ]
 
 MIDDLEWARE = [
@@ -55,7 +59,7 @@ ROOT_URLCONF = 'emikoSite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

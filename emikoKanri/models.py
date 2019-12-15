@@ -4,7 +4,7 @@ from django.utils import timezone
 
 
 class NurseRecord(models.Model):
-    nurse_day = models.DateTimeField(default=timezone.now)
+    nurse_day = models.DateField()
     urine_time = models.CharField(max_length=5, null=True)
     urine_volume = models.PositiveIntegerField(null=True)
     memo = models.CharField(max_length=200, null=True)
