@@ -19,8 +19,8 @@
             
             {% if user.is_superuser %}
                 
-                <td><a href="{% url 'nurse_edit' nurse.pk %}">更新画面</a></td> 
-                <td><a href="{% url 'nurse_remove' nurse.pk %}">削除画面</a></td> 
+                <td><a href="{% url 'emikoKanri:nurse_edit' nurse.pk %}">更新画面</a></td> 
+                <td><a href="{% url 'emikoKanri:nurse_remove' nurse.pk %}">削除画面</a></td> 
                     
             {% endif %}  
             

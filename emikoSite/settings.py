@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'emikoKanri.apps.EmikokanriConfig',
     'accounts.apps.AccountsConfig',
+    'post.apps.PostConfig',
 
 ]
 

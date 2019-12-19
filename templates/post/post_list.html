@@ -1,0 +1,16 @@
+{% extends 'base2.html' %}
+{% block content %}
+    {% for post in posts %}
+        <div class="post">
+            <p>published: {{ post.published_date }}</p>
+            <p>作成者： {{ post.author　}}</p> 
+            {% if user == post.author %}
+                <h2><a href="{% url 'post:post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+            {% else %}
+                <h2>{{ post.title }}</h2>
+            {% endif %}
+            <p>{{ post.text|linebreaksbr }}</p>
+            <a href="{% url 'post:post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a>
+        </div>
+    {% endfor %}
+{% endblock %}

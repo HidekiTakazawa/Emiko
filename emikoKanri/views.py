@@ -20,7 +20,7 @@ def nurse_new(request):
             nurse.author = request.user
             
             nurse.save()
-            return redirect('nurse_list')
+            return redirect('emikoKanri:nurse_list')
     else:
         form = NurseRecordForm()
     return render(request, 'emikoKanri/nurse_edit.html', {'form': form})
@@ -34,7 +34,7 @@ def nurse_edit(request, pk):
             nurse.author = request.user
             
             nurse.save()
-            return redirect('nurse_list')
+            return redirect('emikoKanri:nurse_list')
     else:
         form = NurseRecordForm(instance=nurse)
     return render(request, 'emikoKanri/nurse_edit.html', {'form': form})
@@ -43,4 +43,4 @@ def nurse_edit(request, pk):
 def nurse_remove(request, pk):
     nurse = get_object_or_404(NurseRecord, pk=pk)
     nurse.delete()
-    return redirect('nurse_list')
+    return redirect('emikoKanri:nurse_list')
